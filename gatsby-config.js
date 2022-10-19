@@ -1,5 +1,3 @@
-
-
 module.exports = {
   siteMetadata: {
     title: `Musings and Moments`,
@@ -14,6 +12,7 @@ module.exports = {
         name: `blog`,
         path: `${__dirname}/blog`,
       }
-    }
+    },
+    "gatsby-plugin-mdx",
   ],
 }

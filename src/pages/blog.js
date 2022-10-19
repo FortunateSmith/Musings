@@ -6,23 +6,30 @@ import { graphql } from "gatsby";
 export default function BlogPage({ data }) {
   return (
     <Layout pageTitle="Blog Posts">
-      <ul>
-        {data.allFile.nodes.map((node) => {
-          return <li key={node.name}>{node.name}</li>;
+ 
+        {data.allMdx.nodes.map((node) => {
+          return <article key={node.name}>{node.name}
+          <h2>{node.frontmatter.title}</h2>
+          <h5>Posted: {node.frontmatter.date}</h5>
+          <p>{node.excerpt}</p>
+          </article>
         })}
-      </ul>
+   
     </Layout>
   );
 }
 
 export const query = graphql`
-  query {
-    allFile {
-      nodes {
-        name
+query {
+  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
       }
+      id
+      excerpt
     }
   }
-`;
-// console.log('query', query.data)
+}`
 export const Head = () => <Seo title="Blog Posts" />;
