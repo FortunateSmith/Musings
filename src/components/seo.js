@@ -12,6 +12,7 @@ export default function Seo({title}) {
   }`)
 
   return (
+    // Display for browser tab
     <title>{title} | {data.site.siteMetadata.title}</title>
   )
 }

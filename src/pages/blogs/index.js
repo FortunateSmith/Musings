@@ -1,6 +1,6 @@
 import * as React from "react";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Layout from "../../components/layout";
+import Seo from "../../components/seo";
 import { graphql } from "gatsby";
 
 export default function BlogPage({ data }) {
@@ -8,7 +8,7 @@ export default function BlogPage({ data }) {
     <Layout pageTitle="Blog Posts">
  
         {data.allMdx.nodes.map((node) => {
-          return <article key={node.name}>{node.name}
+          return <article key={node.id}>
           <h2>{node.frontmatter.title}</h2>
           <h5>Posted: {node.frontmatter.date}</h5>
           <p>{node.excerpt}</p>

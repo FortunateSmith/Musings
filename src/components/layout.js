@@ -32,7 +32,7 @@ export default function Layout({ pageTitle, children }) {
             <Link to="/about" className={navLinkText}>About</Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>Blogs</Link>
+            <Link to="/blogs" className={navLinkText}>Blogs</Link>
           </li>
         </ul>
       </nav>
